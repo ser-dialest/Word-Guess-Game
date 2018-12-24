@@ -16,11 +16,24 @@
         var walkImage = document.createElement("img");
         walkImage.setAttribute("src", "assets/images/Alex-Walk.gif");
         walkImage.setAttribute("id", "alex");
-        var placement = parseInt((Math.random()*100+100));
-        walkImage.style.zIndex = placement;
-        walkImage.style.top = placement + "px";
-        // See #alex in CSS for details on image attribute/behavior //
+        var yPos = parseInt((Math.random()*100+100));
+        walkImage.style.zIndex = yPos;
+        walkImage.style.top = yPos + "px";
+        var xPos =  -120;
         document.body.appendChild(walkImage);
+        var move = setInterval(function() {
+            if(xPos >= 2000) {
+                clearInterval(move);
+                document.body.removeChild(walkImage);
+            }
+            else {
+                xPos++;
+                walkImage.style.left = xPos + "px";
+            }
+        }, 5);
+
+        // See #alex in CSS for details on image attribute/behavior //
+
     }
 </script>
 
@@ -36,12 +49,12 @@
         /* top: 100px; */
         left: -80px;
         width: 76px;
-        animation: walk 15s;
+        /* animation: walk 15s; */
     }
-
+/* 
     @keyframes walk {
         from {left: -10%;}
         to {left:150%}
-    }
+    } */
 </style>
 </html>
