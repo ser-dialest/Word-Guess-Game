@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This button will generate an image that will walk across the screen -->
+    <button onclick="walk()" id="walk">Let's see him walk!</button>
+</body>
+
+<script>
+    function walk() {    
+        var walkImage = document.createElement("img");
+        walkImage.setAttribute("src", "assets/images/Alex-Walk.gif");
+        walkImage.setAttribute("id", "alex");
+        var placement = parseInt((Math.random()*100+100));
+        walkImage.style.zIndex = placement;
+        walkImage.style.top = placement + "px";
+        // See #alex in CSS for details on image attribute/behavior //
+        document.body.appendChild(walkImage);
+    }
+</script>
+
+<style>
+    body {
+        position: relative;
+        background: cadetblue;
+        overflow: hidden;
+    }
+    
+    #alex {
+        position: absolute;
+        /* top: 100px; */
+        left: -80px;
+        width: 76px;
+        animation: walk 15s;
+    }
+
+    @keyframes walk {
+        from {left: -10%;}
+        to {left:150%}
+    }
+</style>
+</html>
