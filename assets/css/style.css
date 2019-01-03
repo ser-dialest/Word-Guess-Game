@@ -1,0 +1,74 @@
+@font-face {
+    font-family: RCRfont;
+    src: url(../fonts/rcr-webfont.woff);
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height:100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+p {
+    font-family: RCRfont;
+    font-size: 42px;
+    color: white;
+}
+
+pre {
+    font-family: RCRfont;
+    font-size: 42px;
+    color: white;
+}
+
+#central {
+
+    background: black; 
+    width: 768px;
+    height: 100%;
+    margin: auto;
+}
+
+#gameArea {
+    position: relative;
+    z-index: 3;
+}
+
+#restArea {
+    width: 768px;
+    height: 672px;
+}
+
+#restScene {
+    position: absolute;
+    left: 48px;
+    top: 168px;
+}
+
+#interior {
+    height: 192px;
+    width: 192px;
+}
+
+#nameDiv {
+    position: absolute;
+    left: 48px;
+    top: 408px;
+    width: 192px;
+    z-index: 4;
+}
+
+#gameText {
+    position: absolute;
+    top: 168px;
+    left: 288px;
+    height: 288px;
+    width: 432px;
+}

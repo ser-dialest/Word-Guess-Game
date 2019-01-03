@@ -72,7 +72,7 @@ document.onkeyup = function(event) {
             }
             else {
                 console.log("That's part of the answer."); //Checking
-                for (i = 0; i < word.length -1; i++){
+                for (i = 0; i < word.length; i++){
                     // What elements does it match in the answer
                     i = lowerWord.indexOf(letter, i);
                     if (i === -1) {
