@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p id="alex"></p>
+    </div>
+</body>
+<style>
+    #demo {
+        height: 60px;
+        width:600px;
+        position: relative;
+        background: teal;
+    }
+    #alex {
+        height: 32px;
+        width: 20px;
+        background-image: url("assets/images/AlexWalkSheet.png");
+        position: absolute;
+        bottom: 0;
+        /* margin: 0px;
+        padding: 0px; */
+    }
+</style>
+<script>
+    var alex = document.getElementById("alex");
+    var xpos = 0;
+    var t = 1;
+    var sheetPos = 0;
+    var step = "down"
+    function walk(timestamp) {
+        console.log("WALK");
+        if (xpos < 580){
+            if (t % 2 === 0) {
+                xpos += 1;
+                console.log("Move" + xpos);
+            };
+            if (t % 8 === 0) {
+                sheetPos -= 20;
+                if (step === "down") {
+                    step = "up";
+                    alex.style.bottom = "1px";
+                }
+                else {
+                    step = "down";
+                    alex.style.bottom = "0px";
+                }
+                console.log("Step" + sheetPos);
+                if (sheetPos < -60) {sheetPos = 0;}
+                alex.style.backgroundPositionX = sheetPos + "px";
+            }
+            alex.style.left = xpos + "px";
+            t++;
+            requestAnimationFrame(walk);
+        }
+    }
+    requestAnimationFrame(walk);
+</script>
+</html>
