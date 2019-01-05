@@ -14,13 +14,13 @@
 <script>
     function deploy() {    
         var walkImage = document.createElement("p");
-        walkImage.style.backgroundImage = url("assets\images\AlexWalkSheet2.png");
+        walkImage.style.backgroundImage = "url('assets/images/AlexWalkSheet2.png')";
         walkImage.setAttribute("id", "alex");
         walkImage.style.height = "66px";
         walkImage.style.width = "40px";
         walkImage.style.position = "absolute";
         walkImage.style.bottom = "0px";
-        var yPos = parseInt((Math.random()*100+100));
+        var yPos = parseInt((Math.random()*300+100));
         walkImage.style.zIndex = yPos;
         walkImage.style.top = yPos + "px";
         var xPos =  0;
@@ -29,10 +29,10 @@
         document.body.appendChild(walkImage);
         function walk(timestamp) {
             console.log("WALK");
-            if (xpos < 580){
+            if (xPos < 1500){
                 if (t % 2 === 0) {
-                    xpos += 2;
-                    console.log("Move" + xpos)
+                    xPos += 2;
+                    console.log("Move" + xPos)
                 };
                 if (t % 8 === 0) {
                     sheetPos -= 40;
@@ -40,9 +40,13 @@
                     if (sheetPos < -120) {sheetPos = 0;}
                     walkImage.style.backgroundPositionX = sheetPos + "px";
                 }
-                walkImage.style.left = xpos + "px";
+                walkImage.style.left = xPos + "px";
                 t++;
                 requestAnimationFrame(walk);
+            }
+            else {
+                var parent = document.getElementsByTagName("BODY")[0];
+                parent.removeChild(walkImage);
             }
         }
         requestAnimationFrame(walk);
