@@ -8,30 +8,44 @@
 </head>
 <body>
     <!-- This button will generate an image that will walk across the screen -->
-    <button onclick="walk()" id="walk">Let's see him walk!</button>
+    <button onclick="deploy()" id="walk">Let's see him walk!</button>
 </body>
 
 <script>
-    function walk() {    
-        var walkImage = document.createElement("img");
-        walkImage.setAttribute("src", "assets/images/Alex-Walk.gif");
+    function deploy() {    
+        var walkImage = document.createElement("p");
+        walkImage.style.backgroundImage = url("assets\images\AlexWalkSheet2.png");
         walkImage.setAttribute("id", "alex");
+        walkImage.style.height = "66px";
+        walkImage.style.width = "40px";
+        walkImage.style.position = "absolute";
+        walkImage.style.bottom = "0px";
         var yPos = parseInt((Math.random()*100+100));
         walkImage.style.zIndex = yPos;
         walkImage.style.top = yPos + "px";
-        var xPos =  -120;
+        var xPos =  0;
+        var t = 1;
+        var sheetPos = 0;
         document.body.appendChild(walkImage);
-        var move = setInterval(function() {
-            if(xPos >= 2000) {
-                clearInterval(move);
-                document.body.removeChild(walkImage);
+        function walk(timestamp) {
+            console.log("WALK");
+            if (xpos < 580){
+                if (t % 2 === 0) {
+                    xpos += 2;
+                    console.log("Move" + xpos)
+                };
+                if (t % 8 === 0) {
+                    sheetPos -= 40;
+                    console.log("Step" + sheetPos);
+                    if (sheetPos < -120) {sheetPos = 0;}
+                    walkImage.style.backgroundPositionX = sheetPos + "px";
+                }
+                walkImage.style.left = xpos + "px";
+                t++;
+                requestAnimationFrame(walk);
             }
-            else {
-                xPos++;
-                walkImage.style.left = xPos + "px";
-            }
-        }, 5);
-
+        }
+        requestAnimationFrame(walk);
         // See #alex in CSS for details on image attribute/behavior //
 
     }

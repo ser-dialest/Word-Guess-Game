@@ -13,15 +13,15 @@
 </body>
 <style>
     #demo {
-        height: 60px;
+        height: 120px;
         width:600px;
         position: relative;
         background: teal;
     }
     #alex {
-        height: 32px;
-        width: 20px;
-        background-image: url("assets/images/AlexWalkSheet1.png");
+        height: 66px;
+        width: 40px;
+        background-image: url("assets/images/AlexWalkSheet2.png");
         position: absolute;
         bottom: 0;
         /* margin: 0px;
@@ -29,37 +29,31 @@
     }
 </style>
 <script>
-    var alex = document.getElementById("alex");
-    var xpos = 0;
-    var t = 1;
-    var sheetPos = 0;
-    var step = "down"
-    function walk(timestamp) {
-        console.log("WALK");
-        if (xpos < 580){
-            if (t % 2 === 0) {
-                xpos += 1;
-                console.log("Move" + xpos);
-            };
-            if (t % 8 === 0) {
-                sheetPos -= 20;
-                if (step === "down") {
-                    step = "up";
-                    alex.style.bottom = "1px";
+    function deploy() {
+        var alex = document.getElementById("alex");
+        var xpos = 0;
+        var t = 1;
+        var sheetPos = 0;
+        function walk(timestamp) {
+            console.log("WALK");
+            if (xpos < 580){
+                if (t % 2 === 0) {
+                    xpos += 2;
+                    console.log("Move" + xpos)
+                };
+                if (t % 8 === 0) {
+                    sheetPos -= 40;
+                    console.log("Step" + sheetPos);
+                    if (sheetPos < -120) {sheetPos = 0;}
+                    alex.style.backgroundPositionX = sheetPos + "px";
                 }
-                else {
-                    step = "down";
-                    alex.style.bottom = "0px";
-                }
-                console.log("Step" + sheetPos);
-                if (sheetPos < -60) {sheetPos = 0;}
-                alex.style.backgroundPositionX = sheetPos + "px";
+                alex.style.left = xpos + "px";
+                t++;
+                requestAnimationFrame(walk);
             }
-            alex.style.left = xpos + "px";
-            t++;
-            requestAnimationFrame(walk);
         }
+        requestAnimationFrame(walk);
     }
-    requestAnimationFrame(walk);
+    deploy();
 </script>
 </html>
