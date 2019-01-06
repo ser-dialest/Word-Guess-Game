@@ -9,6 +9,7 @@
 <body>
     <!-- This button will generate an image that will walk across the screen -->
     <button onclick="deploy()" id="walk">Let's see him walk!</button>
+    <p id="demo"></p>
 </body>
 
 <script>
@@ -53,6 +54,13 @@
         // See #alex in CSS for details on image attribute/behavior //
 
     }
+
+    function myFunction() {
+        var w = window.outerWidth;
+        var h = window.outerHeight;
+        var txt = "Window size: width=" + w + ", height=" + h;
+        document.getElementById("demo").innerHTML = txt;
+    }
 </script>
 
 <style>
@@ -68,6 +76,10 @@
         left: -80px;
         width: 76px;
         /* animation: walk 15s; */
+    }
+
+    p {
+        float:right;
     }
 /* 
     @keyframes walk {

@@ -18,20 +18,20 @@ body {
 
 p {
     font-family: RCRfont;
-    font-size: 42px;
+    font-size: 14px;
     color: white;
 }
 
 pre {
     font-family: RCRfont;
-    font-size: 42px;
+    font-size: 14px;
     color: white;
 }
 
 #central {
 
     background: black; 
-    width: 768px;
+    width: 256px;
     height: 100%;
     margin: auto;
 }
@@ -42,33 +42,33 @@ pre {
 }
 
 #restArea {
-    width: 768px;
-    height: 672px;
+    width: 256px;
+    height: 224px;
 }
 
 #restScene {
     position: absolute;
-    left: 48px;
-    top: 168px;
+    left: 16px;
+    top: 56px;
 }
 
 #interior {
-    height: 192px;
-    width: 192px;
+    height: 64px;
+    width: 64px;
 }
 
 #nameDiv {
     position: absolute;
-    left: 48px;
-    top: 408px;
-    width: 192px;
+    left: 16px;
+    top: 136px;
+    width: 64px;
     z-index: 4;
 }
 
 #gameText {
     position: absolute;
-    top: 168px;
-    left: 288px;
-    height: 288px;
-    width: 432px;
+    top: 56px;
+    left: 96px;
+    height: 96px;
+    width: 144px;
 }
