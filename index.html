@@ -11,26 +11,29 @@
 <body>
     <section id="central">
         <div id="gameArea">
-            <img src="assets/images/EmptyRestaurant1.png" alt="River City Ransom Restaurant Menu" id="restArea">
+            <img src="assets/images/EmptyRestaurant3.png" alt="River City Ransom Restaurant Menu" id="restArea">
             <div id="restScene">
-                <img src="assets/images/RiseAndShine1.png" alt="" id="interior">
+                <!-- <img src="" alt="" id="interior"> -->
+                <div id="server"></div>
+                <div id="patron"></div>
             </div>
             <div id="nameDiv">
-                <p id="restName">Rise & Shine Cafe</p>
+                <p id="restName"></p>
             </div>
             <div id="gameText">
-                    <p>Guess letters to order.</p>
-                    <pre id="answer"><!--The answer, starting with blanks, will go here--></pre>
-                    <p>Misses: <span id="misses">0</span></p>
-                    <p>Used Letters: <span id="used"></span></p>
+                    <p id="instruction"></p>
+                    <p id="answer"><!--The answer, starting with blanks, will go here--></p>
+                    <p id="missArea"><span id="misses"></span></p>
+                    <p id="usedArea"><span id="used"></span></p>
                     <p id="results"></p>
             </div>
-            <div id="server">
-p
+
             </div>
         </div>
     </section>
-    <script>console.log(100/224)</script>
+    <audio src="assets/sounds/05-menu.mp3" autoplay="autoplay" loop="loop" id="bgm"></audio>
 </body>
 <script src="assets/javascript/game.js"></script>
 </html>
+
+<!-- assets/images/RiseAndShine1.png -->

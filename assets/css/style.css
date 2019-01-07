@@ -13,62 +13,72 @@ body {
     height:100%;
     margin: 0;
     padding: 0;
-
+    background-image: url("../images/Background.png");
 }
 
 p {
     font-family: RCRfont;
-    font-size: 14px;
+    /* font-size: 14px; */
     color: white;
+    position: relative;
+    z-index: 4;
 }
 
 pre {
     font-family: RCRfont;
-    font-size: 14px;
+    /* font-size: 14px; */
     color: white;
+    z-index: 5;
 }
 
 #central {
 
     background: black; 
-    width: 256px;
+    /* width: 256px; */
     height: 100%;
     margin: auto;
 }
 
 #gameArea {
     position: relative;
-    z-index: 3;
+
 }
 
 #restArea {
-    width: 256px;
-    height: 224px;
+    /* width: 256px;
+    height: 224px; */
+    position: absolute;
+    z-index: 3;
 }
 
 #restScene {
     position: absolute;
-    left: 16px;
-    top: 56px;
+    /* left: 16px;
+    top: 56px; */
 }
 
 #interior {
-    height: 64px;
-    width: 64px;
+    /* height: 64px;
+    width: 64px; */
 }
 
 #nameDiv {
     position: absolute;
-    left: 16px;
+    /* left: 16px;
     top: 136px;
-    width: 64px;
+    width: 64px; */
     z-index: 4;
 }
 
 #gameText {
     position: absolute;
-    top: 56px;
+    /* top: 56px;
     left: 96px;
     height: 96px;
-    width: 144px;
+    width: 144px; */
+}
+
+#server {
+    z-index: 1;
+    position: absolute;
 }
