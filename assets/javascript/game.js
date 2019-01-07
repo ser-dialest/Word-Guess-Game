@@ -190,7 +190,7 @@ Restaurant.prototype.load = function () {
 
 
 // First restaurant - Rise & Shine
-var riseAndShine = new Restaurant("Rise & Shine Cafe", "assets/images/RiseandShine3.png", "assets/images/RnSWaitress3.png", ["Coffee", "Tea", "Pancakes", "Waffles", "Donut", "Muffin", "Bagel", "Croissant", "Milk", "Lasagna", "Chili", "Burger", "Pizza", "Pie"]);
+var riseAndShine = new Restaurant("Rise & Shine Cafe", "assets/images/RiseAndShine3.png", "assets/images/RnSWaitress3.png", ["Coffee", "Tea", "Pancakes", "Waffles", "Donut", "Muffin", "Bagel", "Croissant", "Milk", "Lasagna", "Chili", "Burger", "Pizza", "Pie"]);
 
 // Define server prototype
 // function Server(image)
