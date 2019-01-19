@@ -28,7 +28,8 @@ pre {
     font-family: RCRfont;
     /* font-size: 14px; */
     color: white;
-    z-index: 5;
+    position: relative;
+    z-index: 4;
 }
 
 #central {

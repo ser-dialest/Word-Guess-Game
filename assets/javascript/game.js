@@ -69,8 +69,11 @@ function start() {
     patron.style.bottom = 4*x + "px";
 
     var music = document.getElementById("bgm"); 
-    music.volume = 0.3;
-
+    music.volume = .3;
+    const playPromise = music.play();
+    if (playPromise !== null){
+        playPromise.catch(() => { music.play(); })
+    }
 };
 
 // Define restaurant prototype
@@ -190,7 +193,7 @@ Restaurant.prototype.load = function () {
 
 
 // First restaurant - Rise & Shine
-var riseAndShine = new Restaurant("Rise & Shine Cafe", "assets/images/RiseAndShine3.png", "assets/images/RnSWaitress3.png", ["Coffee", "Tea", "Pancakes", "Waffles", "Donut", "Muffin", "Bagel", "Croissant", "Milk", "Lasagna", "Chili", "Burger", "Pizza", "Pie"]);
+var riseAndShine = new Restaurant("Rise & Shine Cafe", "assets/images/RiseAndShine3.png", "assets/images/RnSWaitress3.png", ["Coffee", "Tea", "Pancakes", "Hot Cocoa", "Waffles", "Donut", "Muffin", "Bagel", "Croissant", "Milk", "Lasagna", "Chili", "Burger", "Pizza", "Pie"]);
 
 // Define server prototype
 // function Server(image)
